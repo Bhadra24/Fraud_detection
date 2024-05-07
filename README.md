@@ -1,5 +1,3 @@
-[Project Webpage Link](https://bhadra24.github.io/)
-
 # Enhanced Restaurant Experience: NLP-powered Chatbot and Text Summarization with Dialogflow 
 <div align="center">
     <a><img width="720" src="images/title_3.png" alt="soft"></a>
@@ -124,8 +122,8 @@ https://69a4-2607-fb91-309b-5ed-1d1a-be1d-3d37-c09b.ngrok-free.app  (example)
 ## Results:
 Fine-tuning the Pegasus model significantly improved its ability to summarize chat conversations (ROUGE-Lsum: 0.328 vs 0.27 baseline), enabling sentiment analysis for valuable customer insights and improved restaurant operations.  These findings confirm the chatbot's exceptional accuracy in understanding customer inquiries through NLP techniques.
 <figure align="center"> 
-  <img src="images/Arch_1.png" alt="drawing" height="400"/>
-  <figcaption>System Architecture of the project</figcaption>
+  <img src="images/bag_1.png" alt="drawing" height="400"/>
+  <figcaption>Sentiment Review Word Cloud (Positive/Negative)</figcaption>
 </figure>
 
 ## Demo:
@@ -154,6 +152,6 @@ Fine-tuning the Pegasus model significantly improved its ability to summarize ch
 - **Customer Sentiments**: Sentiment analysis combined with slow resolution times can indicate frustrated customers, prompting a focus on faster issue resolution.
 
 ## Citations:
-1. [RetinaFace](https://arxiv.org/abs/1905.00641)
-2. [Title Image](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.timedynamo.com%2Fblog%2Fface-recognition-attendance-system&psig=AOvVaw2FkF7iZtn_xnR0WqiLOgx8&ust=1713675455940000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMjdmdmA0IUDFQAAAAAdAAAAABAS)
+1. [Chatbot For A Restaurant Using DialogFlow](https://www.collegesidekick.com/study-docs/7263821)
+2. [Title Image](https://www.upwork.com/services/product/development-it-a-bot-development-for-various-platforms-1693603859441704960)
 
