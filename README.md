@@ -1,6 +1,6 @@
 [Project Webpage Link](https://bhadra24.github.io/)
 
-# Restaurant-Based Chatbot And Text Summarization Using Dialog Flow 
+# Enhanced Restaurant Experience: NLP-powered Chatbot and Text Summarization with Dialogflow 
 <div align="center">
     <a><img width="720" src="images/title_3.png" alt="soft"></a>
 </div>
@@ -37,17 +37,13 @@ The project is divided into two main parts:
 
 <figure align="center"> 
   <img src="images/website_1.png" alt="drawing" height="400"/>
-  <figcaption>Screen to Facilitate Course Addition</figcaption>
+  <figcaption>Food Delivery Website</figcaption>
 </figure>
 
-<figure align="center"> 
-  <img src="images/CaptureAttendance.jpg" alt="drawing" height="400"/>
-  <figcaption>Screen to Capture Course Attendance</figcaption>
-</figure>
 
 <figure align="center"> 
-  <img src="images/RecordAttendance.jpg" alt="drawing" height="400"/>
-  <figcaption>Screen to Modify, Save or Download Attendance CSV.</figcaption>
+  <img src="images/chatUI_1.png" alt="drawing" height="400"/>
+  <figcaption>ChatBot User Interface</figcaption>
 </figure>
 
 
@@ -72,6 +68,24 @@ The project is divided into two main parts:
 
 ## Method:
 
+<figure align="center"> 
+  <img src="images/chatUI_1.png" alt="drawing" height="400"/>
+  <figcaption>System Architecture of the project</figcaption>
+</figure>
+
+
+**Module Descriptions:**
+- **User Interface (UI) Module**: The UI module is responsible for crafting and showcasing the chatbot interface to end-users, incorporating features for user input, displaying chatbot responses, and presenting interactive options.
+- **User Query Processing with Dialogflow**: This initial step concentrates on grasping your unique needs and optimizing the chatbot’s utility for your establishment.
+- **Dialogflow Integration Module**: This module integrates the Dialogflow platform into the chatbot system, facilitating natural language understanding and seamless conversation flow.
+- **Dialogflow Fulfillment Module**: The heart of our system is Dialogflow, which connects to external services like reservation databases to fulfill your requests by understanding your intent and extracting key information.  In essence, it lets the chatbot "talk" to other systems.
+- **MySQL Database Module**: The Transaction Database for Order Management oversees the storage and retrieval of restaurant-related data, encompassing
+menu items, orders, and reservations.
+- **MongoDB Database Module**: This database houses chat sessions and transactional data linked to unique session IDs, ensuring seamless association of messages with their respective conversations for effortless retrieval and analysis.
+- **FastAPI Backend Module**:The FastAPI backend module processes webhook requests from Dialogflow, executes business logic, and interfaces with the MySQL database.
+- **Data Transformation Module**: Jupyter Notebooks are crucial for data transformation,  consolidating and structuring data (like chat messages from MongoDB) for analysis or summarization tasks.
+- **Text Summarization with the Continuously Trained Pegasus Model:**: Our system leverages the Pegasus model (both pre-trained and fine-tuned versions from Hugging Face) to summarize chat sessions.
+- **Testing, Validation, and Deployment**: This involves conducting unit tests on individual components and executing end-to-end tests to simulate user interactions. Deployment encompasses the process of launching the chatbot system and hosting it on a selected platform to guarantee accessibility and security.
 
 
 ## Implementation:
