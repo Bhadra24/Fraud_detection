@@ -1,18 +1,18 @@
 [Project Webpage Link](https://bhadra24.github.io/)
 
-# Course Attendance Robot
+# Restaurant-Based Chatbot And Text Summarization Using Dialog Flow 
 <div align="center">
-    <a><img width="720" src="images/face-recognition-attendance-system.jpg" alt="soft"></a>
+    <a><img width="720" src="images/title_3.png" alt="soft"></a>
 </div>
 
 ## Table of Contents
 
-- [Course Attendance System with Facial Recognition](#course-attendance-system-with-facial-recognition)
+- [Restaurant-Based Chatbot And Text Summarization Using Dialog Flow](#Restaurant-Based-Chatbot-And-Text-Summarization-Using-Dialog-Flow)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
       - [Project Description](#project-description)
       - [Website](#website-screenshots)
-  - [Datasets](#datasets)
+  - [Dataset Preparation ](#dataset-preparation)
       - [Raw Images](#raw-images-data-collection)
       - [Processed Images ](#processed-images)
   - [Method](#method)
@@ -29,9 +29,9 @@
 
 ### Project Description
 
-This project introduces a comprehensive system for managing attendance, leveraging facial detection and recognition technologies to identify individual students and register their attendance. The system is developed using Python, RetinaFace, Face_Recognition, and OpenCV. It offers an efficient and automated solution for monitoring attendance across diverse settings such as educational institutions and workplaces.
-
-Users can also use a web-based graphical interface, to upload classroom images to perform automatic attendance and save the results directly into a CSV file.
+This project introduces a Restaurant Bot a proof-of-concept powered by Dialog Flow. With advanced natural language processing capabilities, it allows users to effortlessly place food orders, track their status, assist customers by answering FAQs, and table reservations, provide menu details, and accommodate special requests. Our project aim is divided into two parts
+- **Part 1:** Create a restaurant bot using Dialog Flow.
+- **Part 2:** Generates Text Summarization from the bot and user which is further used to do the sentiment analysis of the user so that it will help the owner to enhance customer satisfaction and drive business growth.
 
 ### Website Screenshots
 
@@ -51,10 +51,10 @@ Users can also use a web-based graphical interface, to upload classroom images t
 </figure>
 
 
-## Datasets:
-
-### Raw Images Data Collection:
-To assess the efficacy of the proposed system, a dataset containing thirty-six students was compiled. Facial images of volunteer students are captured using a laptop web camera and saved in a folder. The dataset utilized in this investigation encompasses 100 images for a sample size of thirty-six (36) students totaling 3,600 images, exhibiting a variety of poses including front, left, and right facial features. The images were standardized to dimensions of 112 pixels in height and 112 pixels in width. Additionally, 69 class group photographs were captured to evaluate the individual recognition of students' faces within group settings. 
+## Dataset Preparation:
+**1. Teaching the Chatbot Our Language:** We define user goals (intents) like "View Menu" and provide examples of how users might ask for them. The variety and quality of these examples directly impact the chatbot's understanding.
+**2. Extracting Key Details:** We identify important information users might provide (entities) like "number of guests" or "reservation time." Defining entities helps the chatbot pinpoint these details within user queries.
+**3. Connecting the Chatbot to the Back-End (Fulfillment):** For dynamic responses or actions (e.g., checking availability), we'll use APIs (built with FASTAPI) to connect the chatbot to our systems, allowing it to retrieve information or complete tasks based on user interactions
 
 ### Raw Images:
 <figure align="center"> 
@@ -119,90 +119,6 @@ python Dataset_Collecting Images.py
 
 ## Results:
 
-## Overall Facial Detection and Recognition Results
-
-| Detection           | Recognition          | Image Size | Cropped Embeddings | Detection Accuracy (%) | Recognition Accuracy (%) | Group Image Recognition | Recognition Format - Images |
-|---------------------|----------------------|------------|--------------------|------------------------|--------------------------|-------------------------|-----------------------------|
-| RetinaFace          | Face Recognition    | 50x50      | :x:                | 99.4                   | 88.3                     | :heavy_check_mark:      | :heavy_check_mark:         |
-| RetinaFace          | Face Recognition    | 112x112    | :x:                | 99.2                   | 85.3                     | :heavy_check_mark:      | :heavy_check_mark:         |
-| RetinaFace          | Face Recognition    | 600x600    | :x:                | 98.6                   | 85.1                     | :heavy_check_mark:      | :heavy_check_mark:         |
-| Face Recognition   | Face Recognition    | 50x50      | :heavy_check_mark: | 65.5                   | 72.3                     | :heavy_check_mark:      | :heavy_check_mark:         |
-| Face Recognition   | Face Recognition    | 112x112    | :x:                | 65.5                   | 70.5                     | :heavy_check_mark:      | :heavy_check_mark:         |
-| Yolo9               | Face Recognition    | 112x112    | :x:                | 51.7                   | 58.4                     | :heavy_check_mark:      | :heavy_check_mark:         |
-| RetinaFace          | haarcascade_frontalface | 50x50 | :x:                | 99.4                   | 45.2                     | :heavy_check_mark:      | :heavy_check_mark:         |
-| InsightFace         | InsightFace         | 1200x1600  | :x:                | 99.0                   | 89.2                     | :heavy_check_mark:      | :heavy_check_mark:         |
-| haarcascade_frontalface | Face Recognition | 112x112 | :x:                | 91.0                   | 86.0                     | :heavy_check_mark:      | :heavy_check_mark:         |
-| InsightFace         | InsightFace         | 1200x1600  | :x:                | 99.0                   | 88.0                     | :heavy_check_mark:      | :heavy_check_mark:         |
-| Haar cascade + DoG filtering | LBPH       | -          | :x:                | 98.3                   | 87.0                     | :x:                     | :x:                         |
-| RetinaFace[**Ours**]| Face Recognition    | **50x50**  | **:heavy_check_mark:** | **99.4**               | **90.3**                 | **:heavy_check_mark:**  | **:heavy_check_mark:**    |
-
-## Individual Facial Detection and Recognition Results
-
-| Image Name | Total Faces | Detected Faces | Available in Training Dataset | Correctly Identified Faces | Individual Image Accuracy |
-|------------|-------------|----------------|-------------------------------|----------------------------|---------------------------|
-| 1          | 5           | 5              | 3                             | 2                          | 66.67%                    |
-| 2          | 8           | 8              | 6                             | 4                          | 66.67%                    |
-| 3          | 5           | 5              | 5                             | 4                          | 80.00%                    |
-| 4          | 4           | 4              | 3                             | 2                          | 66.67%                    |
-| 5          | 7           | 7              | 5                             | 3                          | 60.00%                    |
-| 6          | 5           | 5              | 2                             | 2                          | 100.00%                   |
-| 8          | 4           | 4              | 2                             | 2                          | 100.00%                   |
-| 10         | 12          | 11             | 8                             | 8                          | 100.00%                   |
-| 14         | 14          | 14             | 12                            | 10                         | 83.33%                    |
-| 15         | 9           | 9              | 9                             | 9                          | 100.00%                   |
-| 16         | 11          | 11             | 10                            | 9                          | 90.00%                    |
-| 17         | 9           | 9              | 8                             | 8                          | 100.00%                   |
-| 18         | 7           | 7              | 7                             | 6                          | 85.71%                    |
-| 19         | 5           | 5              | 4                             | 3                          | 75.00%                    |
-| 20         | 10          | 10             | 10                            | 8                          | 80.00%                    |
-| 21         | 5           | 5              | 5                             | 5                          | 100.00%                   |
-| 22         | 5           | 5              | 4                             | 4                          | 100.00%                   |
-| 23         | 4           | 4              | 4                             | 4                          | 100.00%                   |
-| 24         | 3           | 3              | 2                             | 2                          | 100.00%                   |
-| 26         | 2           | 2              | 2                             | 2                          | 100.00%                   |
-| 27         | 7           | 7              | 6                             | 5                          | 83.33%                    |
-| 28         | 4           | 4              | 4                             | 4                          | 100.00%                   |
-| 29         | 4           | 4              | 4                             | 3                          | 75.00%                    |
-| 30         | 12          | 12             | 9                             | 9                          | 100.00%                   |
-| 32         | 6           | 6              | 6                             | 5                          | 83.33%                    |
-| 33         | 3           | 3              | 2                             | 2                          | 100.00%                   |
-| 35         | 3           | 3              | 1                             | 1                          | 100.00%                   |
-| 36         | 5           | 5              | 2                             | 2                          | 100.00%                   |
-| 37         | 5           | 5              | 1                             | 1                          | 100.00%                   |
-| 38         | 11          | 11             | 5                             | 5                          | 100.00%                   |
-| 39         | 10          | 10             | 4                             | 3                          | 75.00%                    |
-| 40         | 9           | 9              | 5                             | 5                          | 100.00%                   |
-| 41         | 11          | 11             | 5                             | 5                          | 100.00%                   |
-| 42         | 12          | 12             | 6                             | 5                          | 83.33%                    |
-| 43         | 11          | 11             | 5                             | 5                          | 100.00%                   |
-| 44         | 11          | 11             | 5                             | 4                          | 80.00%                    |
-| 45         | 11          | 11             | 5                             | 4                          | 80.00%                    |
-| 46         | 11          | 11             | 5                             | 5                          | 100.00%                   |
-| 47         | 11          | 11             | 5                             | 5                          | 100.00%                   |
-| 48         | 11          | 11             | 5                             | 4                          | 80.00%                    |
-| 49         | 11          | 11             | 5                             | 4                          | 80.00%                    |
-| 50         | 11          | 11             | 6                             | 6                          | 100.00%                   |
-| 51         | 11          | 11             | 5                             | 5                          | 100.00%                   |
-| 52         | 11          | 11             | 5                             | 4                          | 80.00%                    |
-| 53         | 11          | 11             | 5                             | 5                          | 100.00%                   |
-| 54         | 13          | 13             | 6                             | 6                          | 100.00%                   |
-| 55         | 11          | 11             | 5                             | 5                          | 100.00%                   |
-| 56         | 10          | 10             | 5                             | 5                          | 100.00%                   |
-| 57         | 27          | 26             | 18                            | 16                         | 88.89%                    |
-| 58         | 13          | 12             | 9                             | 8                          | 88.89%                    |
-| 59         | 12          | 12             | 5                             | 4                          | 80.00%                    |
-| 60         | 14          | 14             | 5                             | 4                          | 80.00%                    |
-| 61         | 21          | 21             | 10                            | 8                          | 80.00%                    |
-| 62         | 26          | 25             | 12                            | 10                         | 83.33%                    |
-| 63         | 16          | 16             | 8                             | 7                          | 87.50%                    |
-| 64         | 18          | 18             | 8                             | 8                          | 100.00%                   |
-| 65         | 20          | 20             | 11                            | 10                         | 90.91%                    |
-| 66         | 5           | 5              | 4                             | 3                          | 75.00%                    |
-| 67         | 5           | 5              | 4                             | 4                          | 100.00%                   |
-| 68         | 5           | 5              | 4                             | 4                          | 100.00%                   |
-| 69         | 2           | 2              | 1                             | 1                          | 100.00%                   |
-|          |   Mean Detection Accuracy         |    99.4%           |                              | Mean Recognition Accuracy                          | 90.30%                   |
-
 
 ## Demo:
 https://github.com/YoushanZhang/AiAI/assets/62828547/ca918506-9f5e-435f-9b19-e51496da88b8
@@ -210,23 +126,25 @@ https://github.com/YoushanZhang/AiAI/assets/62828547/ca918506-9f5e-435f-9b19-e51
 
 ## Technical Information:
 
-- **Programming Language**: Python
-- **Face Detection**: RetinaFace
-- **Face Recognition**: Face Recognition.
-- **Computer Vision Library**: OpenCV
+- **Programming Language**: Python.
+- **Cloud Service**: Google Dialog Flow.
+- **Website scripting languages**: HTML , CSS, Javascript.
+- **API framework**: Fast API.
+- **Coding Environment**: VS Code.
+- **Database**: Mysql for restaurant data, MongoDB for Chat data.
+
 
 ## Benefits:
 
-- **Effortless Efficiency**: Automates attendance, saving time and resources.
-- **Increased Accuracy**: Reduces human error compared to manual roll calls.
+- **Empowered Customers**: Chatbots can answer questions, generate reports, and offer personalized recommendations based on customer needs.
+- **Data-Driven Insights**: Summarized reports on customer interactions to identify product demand and common pain points.
 - **Enhanced Convenience**: Provides a faster and more user-friendly approach for everyone.
-- **Flexible Scalability**: Adapts to accommodate different group sizes.
 
 ## Applications:
 
-- **Educational Institutions**: Streamlines attendance management and ensures accurate student records.
-- **Workplaces**: Simplifies employee attendance tracking and supports flexible work arrangements.
-- **Access Control Systems**: Offers an additional layer of security by integrating face recognition for entry.
+- **Sales Projections**: Utilize a chatbot to assess sales projections for the upcoming quarter, compare them against the budget, and pinpoint areas for improvement.
+- **Summarized Reports**: Summarized reports reveal frequently asked questions, highlighting areas for product development or improved communication.
+- **Customer Sentiments**: Sentiment analysis combined with slow resolution times can indicate frustrated customers, prompting a focus on faster issue resolution.
 
 ## Citations:
 1. [RetinaFace](https://arxiv.org/abs/1905.00641)
