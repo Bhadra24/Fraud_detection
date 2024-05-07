@@ -16,8 +16,6 @@
       - [Intent Images](#intent-images)
       - [Entities Images](#entities-images)
   - [Method](#method)
-      - [RetinaFace](#retinaface)
-      - [Face Recognition](#face-recognition)
   - [Implementation](#implementation)
   - [Results](#results)
   - [Technical Information](#technical-information)
@@ -29,14 +27,16 @@
 
 ### Project Description
 
-This project introduces a Restaurant Bot a proof-of-concept powered by Dialog Flow. With advanced natural language processing capabilities, it allows users to effortlessly place food orders, track their status, assist customers by answering FAQs, and table reservations, provide menu details, and accommodate special requests. Our project aim is divided into two parts
+This project introduces a Restaurant Bot, a proof-of-concept powered by Dialog Flow. With advanced natural language processing capabilities, it allows users to effortlessly place food orders, track their status, assist customers by answering FAQs, make table reservations, provide menu details, and accommodate special requests. 
+
+The project is divided into two main parts:
 - **Part 1:** Create a restaurant bot using Dialog Flow.
-- **Part 2:** Generates Text Summarization from the bot and user which is further used to do the sentiment analysis of the user which helps the restaurant owner to enhance customer satisfaction and drive business growth.
+- **Part 2:** Generate text summarization from the bot and user. This summary is then used to conduct sentiment analysis, helping the restaurant owner enhance customer satisfaction and drive business growth..
 
 ### Website Screenshots
 
 <figure align="center"> 
-  <img src="images/AddCourse.png" alt="drawing" height="400"/>
+  <img src="images/website_1.png" alt="drawing" height="400"/>
   <figcaption>Screen to Facilitate Course Addition</figcaption>
 </figure>
 
@@ -72,52 +72,41 @@ This project introduces a Restaurant Bot a proof-of-concept powered by Dialog Fl
 
 ## Method:
 
-### RetinaFace:
 
-RetinaFace is a robust single-stage face detector that performs pixel-wise face localization on various scales of faces by taking advantage of joint extra-supervised and self-supervised multi-task learning.
-
-### Detected Faces:
-<figure align="center"> 
-  <img src="images/15_Detection.jpg" alt="drawing" height="720"/>
-  <figcaption>RetinaFace detection output on Classroom Image</figcaption>
-</figure>
-
-
-### Face Recognition:
-Face Recognition is a Python library that can be used to recognize and manipulate faces. It is built on top of Dlib modern C++ toolkit that contains machine-learning algorithms and tools for creating complex software in C++ to solve real-world problems. As a part of facial recognition, after the facial images have been extracted, cropped, resized, and often converted to grayscale, the face recognition algorithm takes on the task of identifying features that most accurately represent the image.
-
-### Recognized Faces:
-<figure align="center"> 
-  <img src="images/15_predicted.jpg" alt="drawing" height="720"/>
-  <figcaption>Face Recognition on group image</figcaption>
-</figure>
 
 ## Implementation:
+Create a folder named chatbot (any name you like) then navigate to that folder using the anaconda prompt and create an environment.
+```bash
+conda create --name chatbot python
 
-**1. Train Image Data Collection:**
-- Go to the folder 'Student Image Data Collection' and download the 'Dataset_Collecting Images.py' and 'haarcascade_frontalface_default.xml'.
-- Create a folder 'Face_Recognition_Images' on your desktop and copy/paste the Python script and haarcascade.xml into the folder. 
-- Run the code.
-   ```
-   Dataset_Collecting Images.py
-   ```
-python Dataset_Collecting Images.py 
-  
-**2. Test Image Data Collection:**
-- You can collect the Group test images from your mobile preferably Apple iPhone or from good-resolution smartphones.
+conda create --name chatbot python=3.8   (can specify the python version if required)
+```
+Activate the environment
+```bash
+conda activate chatbot
+```
 
-**3. Generate Embeddings:**
-- Download the 'Generate Embeddings.py' file to generate the embedding of the known faces.
-- It will create an embedding file that can be used as ground truth embedding for recognition.
-   ```
-   Generate Embeddings.py
-   ```
+To Run the File while developing
+1. Run below command to start FastAPI
+```bash
+uvicorn main:app --reload
+```
+2. Download the ngrok.exe from ngrok page or go to https://dashboard.ngrok.com/get-started/setup/windows.This setup page and follow the steps for download as per your os/programming requirements
+```bash
+choco install ngrok
+ngrok config add-authtoken 2eeSxTGVimejOxtIM4hUBusdDnd_75rZxYpbn5F3eGuG6cqXm
+```
+3. Run below command to start the server
+```bash
+ngrok http http://localhost:8000  or ngrok http 8000  (in cmd prompt)
+```
+4. Copy the URL provided by the server and paste it into the fulfillment webhook URL of Dialogflow
+```bash
+https://69a4-2607-fb91-309b-5ed-1d1a-be1d-3d37-c09b.ngrok-free.app  (example)
+```
 
-**4. Face Recognition:**
-- Go to our website homepage and select/add the course as per your University courses and Upload the class_list.csv (Sample can be found in the Demo folder).
-- Select the date for which attendance should be taken and press the button 'Take Attendance'.
-- Now choose the Group Image for which the attendance is to be taken and upload the file and press the button 'Take Attendance'. 
-- After which you see the recognized faces on the image along with the attendance displayed which can be manually edited and downloaded into a CSV file.
+
+
 
 ## Results:
 
