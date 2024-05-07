@@ -31,7 +31,7 @@ This project introduces a Restaurant Bot, a proof-of-concept powered by Dialog F
 
 The project is divided into two main parts:
 - **Part 1:** Create a restaurant bot using Dialog Flow.
-- **Part 2:** Generate text summarization from the bot and user. This summary is then used to conduct sentiment analysis, helping the restaurant owner enhance customer satisfaction and drive business growth..
+- **Part 2:** Generate text summarization from the bot and user. This summary is then used to conduct sentiment analysis, helping the restaurant owner enhance customer satisfaction and drive business growth.
 
 ### Website Screenshots
 
@@ -45,7 +45,6 @@ The project is divided into two main parts:
   <img src="images/chatUI_1.png" alt="drawing" height="400"/>
   <figcaption>ChatBot User Interface</figcaption>
 </figure>
-
 
 ## Dataset Preparation:
 **1. Teaching the Chatbot Our Language:** We define user goals (intents) like "View Menu" and provide examples of how users might ask for them. The variety and quality of these examples directly impact the chatbot's understanding.
@@ -69,12 +68,12 @@ The project is divided into two main parts:
 ## Method:
 
 <figure align="center"> 
-  <img src="images/chatUI_1.png" alt="drawing" height="400"/>
+  <img src="images/Arch_1.png" alt="drawing" height="400"/>
   <figcaption>System Architecture of the project</figcaption>
 </figure>
 
 
-**Module Descriptions:**
+### **Module Descriptions:**
 - **User Interface (UI) Module**: The UI module is responsible for crafting and showcasing the chatbot interface to end-users, incorporating features for user input, displaying chatbot responses, and presenting interactive options.
 - **User Query Processing with Dialogflow**: This initial step concentrates on grasping your unique needs and optimizing the chatbot’s utility for your establishment.
 - **Dialogflow Integration Module**: This module integrates the Dialogflow platform into the chatbot system, facilitating natural language understanding and seamless conversation flow.
@@ -84,7 +83,7 @@ menu items, orders, and reservations.
 - **MongoDB Database Module**: This database houses chat sessions and transactional data linked to unique session IDs, ensuring seamless association of messages with their respective conversations for effortless retrieval and analysis.
 - **FastAPI Backend Module**:The FastAPI backend module processes webhook requests from Dialogflow, executes business logic, and interfaces with the MySQL database.
 - **Data Transformation Module**: Jupyter Notebooks are crucial for data transformation,  consolidating and structuring data (like chat messages from MongoDB) for analysis or summarization tasks.
-- **Text Summarization with the Continuously Trained Pegasus Model:**: Our system leverages the Pegasus model (both pre-trained and fine-tuned versions from Hugging Face) to summarize chat sessions.
+- **Text Summarization with the Continuously Trained Pegasus Model**: Our system leverages the Pegasus model (both pre-trained and fine-tuned versions from Hugging Face) to summarize chat sessions.
 - **Testing, Validation, and Deployment**: This involves conducting unit tests on individual components and executing end-to-end tests to simulate user interactions. Deployment encompasses the process of launching the chatbot system and hosting it on a selected platform to guarantee accessibility and security.
 
 
@@ -123,10 +122,13 @@ https://69a4-2607-fb91-309b-5ed-1d1a-be1d-3d37-c09b.ngrok-free.app  (example)
 
 
 ## Results:
-
+Fine-tuning the Pegasus model significantly improved its ability to summarize chat conversations (ROUGE-Lsum: 0.328 vs 0.27 baseline), enabling sentiment analysis for valuable customer insights and improved restaurant operations.  These findings confirm the chatbot's exceptional accuracy in understanding customer inquiries through NLP techniques.
+<figure align="center"> 
+  <img src="images/Arch_1.png" alt="drawing" height="400"/>
+  <figcaption>System Architecture of the project</figcaption>
+</figure>
 
 ## Demo:
-https://github.com/YoushanZhang/AiAI/assets/62828547/ca918506-9f5e-435f-9b19-e51496da88b8
 
 
 ## Technical Information:
