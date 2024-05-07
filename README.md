@@ -13,8 +13,8 @@
       - [Project Description](#project-description)
       - [Website](#website-screenshots)
   - [Dataset Preparation ](#dataset-preparation)
-      - [Raw Images](#raw-images-data-collection)
-      - [Processed Images ](#processed-images)
+      - [Intent Images](#intent-images)
+      - [Entities Images](#entities-images)
   - [Method](#method)
       - [RetinaFace](#retinaface)
       - [Face Recognition](#face-recognition)
@@ -53,19 +53,21 @@ This project introduces a Restaurant Bot a proof-of-concept powered by Dialog Fl
 
 ## Dataset Preparation:
 **1. Teaching the Chatbot Our Language:** We define user goals (intents) like "View Menu" and provide examples of how users might ask for them. The variety and quality of these examples directly impact the chatbot's understanding.
+
 **2. Extracting Key Details:** We identify important information users might provide (entities) like "number of guests" or "reservation time." Defining entities helps the chatbot pinpoint these details within user queries.
+
 **3. Connecting the Chatbot to the Back-End (Fulfillment):** For dynamic responses or actions (e.g., checking availability), we'll use APIs (built with FASTAPI) to connect the chatbot to our systems, allowing it to retrieve information or complete tasks based on user interactions
 
-### Raw Images:
+### Intent Images:
 <figure align="center"> 
-  <img src="images/training112.png" alt="drawing" height="400"/>
-  <figcaption>Raw Images of Dimension 112x112</figcaption>
+  <img src="images/dataset_1.png" alt="drawing" height="400"/>
+  <figcaption>Generated Intents</figcaption>
 </figure>
 
-### Processed Images:
+### Entities Images:
 <figure align="center"> 
-  <img src="images/training50.png" alt="drawing" height="400"/>
-  <figcaption>Processed Images Ready for Embeddings 50x50</figcaption>
+  <img src="images/dataset_2.png" alt="drawing" height="400"/>
+  <figcaption>Entities</figcaption>
 </figure>
 
 ## Method:
