@@ -31,7 +31,7 @@
 
 This project introduces a Restaurant Bot a proof-of-concept powered by Dialog Flow. With advanced natural language processing capabilities, it allows users to effortlessly place food orders, track their status, assist customers by answering FAQs, and table reservations, provide menu details, and accommodate special requests. Our project aim is divided into two parts
 - **Part 1:** Create a restaurant bot using Dialog Flow.
-- **Part 2:** Generates Text Summarization from the bot and user which is further used to do the sentiment analysis of the user so that it will help the owner to enhance customer satisfaction and drive business growth.
+- **Part 2:** Generates Text Summarization from the bot and user which is further used to do the sentiment analysis of the user which helps the restaurant owner to enhance customer satisfaction and drive business growth.
 
 ### Website Screenshots
 
